@@ -3,12 +3,18 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class Playground extends Component
 {
+    #[Rule('required|min:3|max:50')]
     public $name;
+
+    #[Rule('required|email|unique:users|min:5|max:50')]
     public $email;
+
+    #[Rule('required|min:5|max:50')]
     public $password;
 
     public function addRandomUser() {
@@ -20,6 +26,8 @@ class Playground extends Component
     }
 
     public function addUser() {
+        $this->validate();
+
         User::create([
             'name' => $this->name,
             'email' => $this->email,
