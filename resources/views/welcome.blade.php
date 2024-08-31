@@ -9,7 +9,11 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        @livewire('Playground')
+    <body class="font-sans antialiased p-12">
+        {{-- @livewire('Playground') --}}
+        <div class="flex">
+            @livewire('UserList')
+            @livewire('UserForm')
+        </div>
     </body>
 </html>
