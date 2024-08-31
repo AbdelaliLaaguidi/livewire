@@ -5,9 +5,12 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Playground extends Component
 {
+    use WithPagination;
+
     #[Rule('required|min:3|max:50')]
     public $name;
 
@@ -41,7 +44,7 @@ class Playground extends Component
     
     public function render()
     {
-        $users = User::all();
+        $users = User::latest()->paginate(6);
         return view('livewire.playground', [
             'users' => $users,
         ]);
