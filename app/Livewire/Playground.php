@@ -23,6 +23,8 @@ class Playground extends Component
             'email' => fake()->email(),
             'password' => 'ABC',
         ]);
+
+        request()->session()->flash('success', 'User created Successfully');
     }
 
     public function addUser() {
@@ -33,6 +35,8 @@ class Playground extends Component
             'email' => $this->email,
             'password' => $this->password,
         ]);
+
+        request()->session()->flash('success', 'User created Successfully');
     }
     
     public function render()
