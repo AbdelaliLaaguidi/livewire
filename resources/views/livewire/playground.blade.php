@@ -47,8 +47,8 @@
             <img src="{{ $this->avatar->temporaryUrl()}}" alt="Image Placeholder" class="w-20 h-20 rounded-full">
         @endif
         
-        <button class="bg-green-600 text-white px-4 py-2 mt-4 rounded-md">Add User</button>
-        <button wire:click.prevent="addRandomUser" class="bg-blue-600 text-white px-4 py-2 rounded-md">Add Random User</button>
+        <button wire:loading.attr="disabled" wire:loading.class.add="bg-gray-400" class="bg-green-600 text-white px-4 py-2 mt-4 rounded-md">Add User</button>
+        <button wire:loading.attr="disabled" wire:loading.class.add="bg-gray-400" wire:click.prevent="addRandomUser" class="bg-blue-600 text-white px-4 py-2 rounded-md">Add Random User</button>
     </form>
 
 </div>

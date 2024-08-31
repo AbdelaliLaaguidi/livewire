@@ -32,11 +32,12 @@ class Playground extends Component
             'avatar' => 'Image Placeholder'
         ]);
 
+        $this->reset();
+
         request()->session()->flash('success', 'User created Successfully');
     }
 
     public function addUser() {
-        // dd($this);
 
         $validated = $this->validate();
 
@@ -48,6 +49,8 @@ class Playground extends Component
             'password' => $validated['password'],
             'avatar' => $validated['avatar'],
         ]);
+
+        $this->reset();
 
         request()->session()->flash('success', 'User created Successfully');
     }
