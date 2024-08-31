@@ -2,7 +2,10 @@
     <ul class="mb-5">
         <li class="text-lg font-semibold text-gray-900">Users: ({{count($users)}})</li>
         @foreach ($users as $user)
-            <li class="px-4 py-2 odd:bg-gray-100 border-t border-gray-300">{{$user->name}}</li>
+            <li class="px-4 py-2 odd:bg-gray-100 border-t border-gray-300 flex gap-5 items-center">
+                <img src="{{ Storage::url($user->avatar)}}" alt="Not" class="w-20 h-20 rounded-full">
+                <span>{{$user->name}}</span>
+            </li>
         @endforeach
     </ul>
 
@@ -33,6 +36,16 @@
         @error('password')
             <span class="block text-xs text-red-500 mb-3">{{ $message }}</span>
         @enderror
+        
+        <label for="avatar" class="text-lg font-semibold text-gray-900">Avatar</label>
+        <input wire:model="avatar" type="file" id="avatar" class="block border border-gray-300 px-4 py-2 rounded-md">
+        @error('avatar')
+            <span class="block text-xs text-red-500 mb-3">{{ $message }}</span>
+        @enderror
+
+        @if ($this->avatar)
+            <img src="{{ $this->avatar->temporaryUrl()}}" alt="Image Placeholder" class="w-20 h-20 rounded-full">
+        @endif
         
         <button class="bg-green-600 text-white px-4 py-2 mt-4 rounded-md">Add User</button>
         <button wire:click.prevent="addRandomUser" class="bg-blue-600 text-white px-4 py-2 rounded-md">Add Random User</button>
