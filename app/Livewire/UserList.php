@@ -18,7 +18,11 @@ class UserList extends Component
     }
 
     public function update() {
-        
+
+    }
+
+    public function mount($search) {
+        $this->search = $search;
     }
 
     #[On('UserAdded')]
