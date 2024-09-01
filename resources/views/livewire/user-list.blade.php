@@ -1,7 +1,7 @@
 <div class="w-1/2 relative overflow-x-auto sm:rounded-lg" >
     <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
         <div>
-            <h1>Total users ({{count($users)}})</h1>
+            <h1>Total users ({{count($this->users)}})</h1>
         </div>
         <label for="table-search" class="sr-only">Search</label>
         <div class="relative">
@@ -11,7 +11,6 @@
                 </svg>
             </div>
             <input wire:model.live.debounce.1000ms="search" type="text" id="table-search-users" class="inline-block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for users">
-            <button wire:click="update" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Search</button>
         </div>
     </div>
     <table class="mb-3 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -26,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($users as $user)
+            @foreach ($this->users as $user)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                         <img class="w-10 h-10 rounded-full" src="{{ Storage::url($user->avatar)}}" alt="user image">
@@ -42,6 +41,6 @@
             @endforeach
         </tbody>
     </table>
-    {{ $users->links() }}
+    {{ $this->users->links() }}
 </div>
 

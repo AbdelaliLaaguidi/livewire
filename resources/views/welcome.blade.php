@@ -13,7 +13,7 @@
         {{-- @livewire('Playground') --}}
         <div class="flex">
             {{-- @livewire('UserList', ['lazy' => true]) --}}
-            <livewire:UserList search="Kelly" lazy/>
+            <livewire:UserList lazy/>
             @livewire('UserForm')
         </div>
     </body>
