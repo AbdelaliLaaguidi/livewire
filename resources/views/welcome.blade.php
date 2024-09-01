@@ -12,7 +12,7 @@
     <body class="font-sans antialiased p-12">
         {{-- @livewire('Playground') --}}
         <div class="flex">
-            @livewire('UserList')
+            @livewire('UserList', ['lazy' => true])
             @livewire('UserForm')
         </div>
     </body>
