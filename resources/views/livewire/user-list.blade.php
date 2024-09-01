@@ -1,4 +1,4 @@
-<div class="w-1/2 relative overflow-x-auto sm:rounded-lg">
+<div class="w-1/2 relative overflow-x-auto sm:rounded-lg" wire:poll>
     <table class="mb-3 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
