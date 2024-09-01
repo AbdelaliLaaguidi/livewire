@@ -1,8 +1,9 @@
-<div class="w-1/2 relative overflow-x-auto sm:rounded-lg" >
-    <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+<div class="w-full h-screen grid place-items-center relative overflow-x-auto sm:rounded-lg">
+    <div class="flex gap-5 items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
         <div>
-            <h1>Total users ({{count($this->users)}})</h1>
+            <h1 class="text-xl font-bold">Total users ({{count($this->users)}})</h1>
         </div>
+        <a href="/" class="inline-block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add User</a>
         <label for="table-search" class="sr-only">Search</label>
         <div class="relative">
             <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -28,7 +29,9 @@
             @foreach ($this->users as $user)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                        <img class="w-10 h-10 rounded-full" src="{{ Storage::url($user->avatar)}}" alt="user image">
+                        <a href="/users/{{ $user->id}}">
+                            <img class="w-10 h-10 rounded-full" src="{{ Storage::url($user->avatar)}}" alt="user image">
+                        </a>
                         <div class="ps-3">
                             <div class="text-base font-semibold">{{ $user->name}}</div>
                             <div class="font-normal text-gray-500">{{ $user->email}}</div>

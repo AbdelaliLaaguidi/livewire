@@ -26,6 +26,6 @@ class UserList extends Component
     #[On('UserAdded')]
     public function render()
     {
-        return view('livewire.user-list');
+        return view('livewire.user-list')->title('Users List');
     }
 }
