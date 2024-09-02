@@ -35,6 +35,8 @@ class UserForm extends Component
         User::create($validated);
 
         $this->reset();
+
+        return $this->redirect('/users', navigate: true);
     }
 
     public function render()

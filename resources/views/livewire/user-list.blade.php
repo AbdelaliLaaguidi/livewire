@@ -3,7 +3,6 @@
         <div>
             <h1 class="text-xl font-bold">Total users ({{$this->users->total()}})</h1>
         </div>
-        <a href="/" class="inline-block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add User</a>
         <label for="table-search" class="sr-only">Search</label>
         <div class="relative">
             <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -29,7 +28,7 @@
             @foreach ($this->users as $user)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                        <a href="/users/{{ $user->id}}">
+                        <a wire.navigate href="/users/{{ $user->id}}">
                             <img class="w-10 h-10 rounded-full" src="{{ Storage::url($user->avatar)}}" alt="user image">
                         </a>
                         <div class="ps-3">
