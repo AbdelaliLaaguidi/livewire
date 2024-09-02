@@ -16,4 +16,8 @@ class ContactUsForm extends Form
 
     #[Rule('required|min:3|max:1000')]
     public $message;
+
+    #[Rule('required')]
+    #[Rule(['images.*' => 'required|image|max:2048'])]
+    public $images;
 }
