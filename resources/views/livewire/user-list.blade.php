@@ -1,7 +1,7 @@
 <div class="w-full h-screen grid place-items-center relative overflow-x-auto sm:rounded-lg">
     <div class="flex gap-5 items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
         <div>
-            <h1 class="text-xl font-bold">Total users ({{count($this->users)}})</h1>
+            <h1 class="text-xl font-bold">Total users ({{$this->users->total()}})</h1>
         </div>
         <a href="/" class="inline-block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add User</a>
         <label for="table-search" class="sr-only">Search</label>
