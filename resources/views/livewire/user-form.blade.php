@@ -16,7 +16,7 @@
     <form class="max-w-sm mx-auto" wire:submit="addUser">
         <div class="mb-5">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-            <input wire:model="name" type="text" id="name"
+            <input wire:model.live.debounce.1000ms="name" type="text" id="name"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                 placeholder="Abdelali Laaguidi" />
             @error('name')
@@ -26,7 +26,7 @@
         </div>
         <div class="mb-5">
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-            <input wire:model="email" type="email" id="email"
+            <input wire:model.live.debounce.1000ms="email" type="email" id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="abdelali@email.com" />
             @error('email')
@@ -36,7 +36,7 @@
         </div>
         <div class="mb-5">
             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-            <input wire:model="password" type="password" id="password"
+            <input wire:model.live.debounce.1000ms="password" type="password" id="password"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                 placeholder="Secret Password" />
             @error('password')
@@ -46,7 +46,7 @@
         </div>
         <div class="mb-5">
             <label for="avatar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Avatar</label>
-            <input wire:model="avatar" type="file" id="avatar"
+            <input wire:model.live.debounce.1000ms="avatar" type="file" id="avatar"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " />
             @error('avatar')
                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
